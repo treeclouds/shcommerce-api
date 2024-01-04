@@ -1,0 +1,23 @@
+{
+  "template": "https://github.com/Tobi-De/cookiecutter-fastapi",
+  "commit": "493de95a4a479681f54b947e647b0a66e143bc8b",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "shcommerce",
+      "project_slug": "shcommerce",
+      "project_description": "",
+      "author": "windalfin",
+      "copyright_year": "2024",
+      "license": "MIT",
+      "database": "Tortoise",
+      "use_sentry": "y",
+      "mail_service": "Amazon SES",
+      "render_html": "n",
+      "use_docker": "y",
+      "use_heroku": "n",
+      "_template": "https://github.com/Tobi-De/cookiecutter-fastapi"
+    }
+  },
+  "directory": null
+}
