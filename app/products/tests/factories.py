@@ -1,11 +1,12 @@
 import factory
 from factory import fuzzy
 from app.products.models import ProductModel
-from app.users.models import UserModel
+from app.products.schemas import ProductCondition
+from app.users.models import User
 
 class UserFactory(factory.Factory):
     class Meta:
-        model = UserModel
+        model = User
 
     id = factory.Faker('uuid4')
     username = factory.Faker('user_name')
@@ -20,7 +21,7 @@ class ProductFactory(factory.Factory):
     category = fuzzy.FuzzyChoice(["Electronics", "Books", "Clothing", "Home"])
     title = factory.Faker('sentence', nb_words=4)
     description = factory.Faker('text')
-    condition = fuzzy.FuzzyChoice([choice.value for choice in ProductModel.condition.type_])
+    condition = fuzzy.FuzzyChoice([choice.value for choice in ProductCondition])
     price = fuzzy.FuzzyDecimal(10.0, 100.0)
     dimensions_width = fuzzy.FuzzyFloat(1.0, 5.0)
     dimensions_height = fuzzy.FuzzyFloat(1.0, 5.0)

@@ -16,20 +16,27 @@ class ProductDimension(BaseModel):
     length: float
     weight: float
 
+class SellerInfo(BaseModel):
+    full_name: str 
+
 class ProductSchema(BaseModel):
-    image: HttpUrl
+    id: int
+    images: List[HttpUrl]
     category: str
     title: str
     description: str
     condition: ProductCondition
     price: float
-    dimensions: ProductDimension
+    dimensions_width: float
+    dimensions_height: float
+    dimensions_length: float
+    dimensions_weight: float
     brand: Optional[str] = None
     material: Optional[str] = None
     stock: conint(ge=1)
     sku: str
     tags: List[str] = []
-    seller_id: int
+    seller: SellerInfo
 
     class Config:
         orm_mode = True

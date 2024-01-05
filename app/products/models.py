@@ -4,7 +4,7 @@ from app.products.schemas import ProductCondition
 
 class ProductModel(models.Model):
     id = fields.IntField(pk=True)
-    image = fields.CharField(max_length=255)
+    images = fields.JSONField()
     category = fields.CharField(max_length=100)
     title = fields.CharField(max_length=255)
     description = fields.TextField()
